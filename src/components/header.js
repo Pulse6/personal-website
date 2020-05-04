@@ -17,8 +17,8 @@ const Header = ({ siteTitle }) => (
         </Link> */}
       {/* </h1> */}
       <ul>
-        <li><Link to="/"><i class="fas fa-user"></i>ABOUT</Link></li>
-        <li><Link to="/contact"><i class="fas fa-envelope"></i>CONTACT</Link></li>
+        <li><Link to="/">ABOUT</Link></li>
+        <li><Link to="/contact">CONTACT</Link></li>
         {/* <li><Link to="/resume/">RESUME</Link></li> */}
       </ul>
     </div>

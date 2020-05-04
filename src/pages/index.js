@@ -13,9 +13,8 @@ const IndexPage = () => (
         <Image />
       </div>
       <div>
-        <h1>Hello there,</h1>
-        <h2>My name is Hok Lun Siu (Marco)</h2>
-        <p>I am passionate about web development and enjoy helping my colleagues hone their coding abilities. I am always looking forward to the  new challenges of the ever changing technological world we live in. I am excited to be given the opportunity to be apart of a coding team.</p>
+        <h1>Nice to meet you,</h1>
+        <p>My name is Hok Lun Siu, You may call me Marco. I am passionate about web development and enjoy helping my colleagues hone their coding abilities. I am always looking forward to the  new challenges of the ever changing technological world we live in. I am excited to be given the opportunity to be apart of a coding team.</p>
       </div>
     </div>
   </Layout>
