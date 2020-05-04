@@ -9,11 +9,11 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <div className="about">
-      <div style={{ minWidth: `300px` }}>
+      <div className="img">
         <Image />
       </div>
       <div>
-        <h1>Nice to meet you,</h1>
+        <h1>Nice to meet you <span role="img" aria-label="sheep">🐑</span></h1>
         <p>My name is Hok Lun Siu, You may call me Marco. I am passionate about web development and enjoy helping my colleagues hone their coding abilities. I am always looking forward to the  new challenges of the ever changing technological world we live in. I am excited to be given the opportunity to be apart of a coding team.</p>
       </div>
     </div>
