@@ -1,0 +1,38 @@
+body {
+  background: #101723;
+  color: white;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  div {
+    margin: 2%;
+  }
+}
+
+header {
+  ul {
+    list-style: none;
+    display: flex;
+    li {
+      margin: 0 1rem;
+      a {
+        text-decoration: none;
+        color: white;
+        &:hover {
+          color: wheat;
+        }
+      }
+      &:active {
+        color: yellow;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 700px) {
+  main {
+    flex-direction: column;
+  }
+}

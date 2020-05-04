@@ -5,7 +5,6 @@ import React from "react"
 const Header = ({ siteTitle }) => (
   <header
     style={{
-      background: `rebeccapurple`,
       marginBottom: `1.45rem`,
     }}
   >
@@ -27,10 +26,14 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
+      <ul>
+        <li><Link to="/">ABOUT</Link></li>
+        <li><Link to="/contact/">CONTACT</Link></li>
+        {/* <li><Link to="/resume/">RESUME</Link></li> */}
+      </ul>
     </div>
   </header>
 )
-
 Header.propTypes = {
   siteTitle: PropTypes.string,
 }
