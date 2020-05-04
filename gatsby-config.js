@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Hok Lun Siu (Marco)`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `Hok Lun Siu (Marco)`,
+    author: `Hok Lun Siu`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
