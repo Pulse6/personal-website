@@ -6,10 +6,15 @@ import SEO from "../components/seo"
 
 const SecondPage = () => (
   <Layout>
-    <SEO title="Page two" />
-    <h1>Hi from the second page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
+    <SEO title="Contact" />
+    <div className="contact">
+      <h1>I'm always happy to hear from you.</h1>
+      <ul>
+        <li><a href="mailto:marco.hl.siu@gmail.com">Email</a></li>
+        <li><a href="https://www.linkedin.com/in/marco-siu-790802162/" target="_blank">LinkedIn</a></li>
+        <li><a href="https://github.com/Pulse6" target="_blank">Github</a></li>
+      </ul>
+    </div>
   </Layout>
 )
 
