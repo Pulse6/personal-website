@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styled from 'styled-components'
 
-// got this from https://github.com/juliettepretot/jul.sh
+// https://github.com/juliettepretot/jul.sh
 const ButtonWrapper = styled.div`
   display: flex;
   margin: 1.5rem 0;
@@ -39,11 +39,13 @@ const ButtonLink = styled.a`
 const NotFoundPage = () => (
   <Layout>
     <SEO title="404: Not found" />
-    <h1>NOT FOUND</h1>
-    <p>Something went wrong :o</p>
-    <ButtonWrapper>
-      <ButtonLink href="/">Return to the homepage</ButtonLink>
-    </ButtonWrapper>
+    <div className="notFound">
+      <h1>NOT FOUND</h1>
+      <p>Something went wrong :o</p>
+      <ButtonWrapper>
+        <ButtonLink href="/">Return to the homepage</ButtonLink>
+      </ButtonWrapper>
+    </div>
   </Layout>
 )
 
