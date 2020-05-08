@@ -4,7 +4,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const SecondPage = () => (
+const ContactPage = () => (
   <Layout>
     <SEO title="Contact" />
     <div className="contact">
@@ -19,4 +19,4 @@ const SecondPage = () => (
   </Layout>
 )
 
-export default SecondPage
+export default ContactPage
