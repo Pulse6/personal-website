@@ -106,10 +106,19 @@ header {
   h1 {
     max-width: 960px;
   }
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   input {
     border-radius: 6px;
     border: 1px solid transparent;
     max-width: 100%;
+    &:focus {
+      background-color: gray;
+      color: wheat
+    }
   }
 }
 
