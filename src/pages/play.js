@@ -14,19 +14,20 @@ const PlayPage = () => {
   return (
     < Layout >
       <SEO title="Play" />
-      <form onSubmit={handleSubmit}>
-        <h1>{name}</h1>
-        <label>
-          Type something:
-          <input
-            type="text"
-            name="name"
-            value={name}
-            onChange={(event) => setName(event.target.value)}
-          />
-        </label>
-        <button type="submit">Submit</button>
-      </form>
+      <div className="playground">
+        <form onSubmit={handleSubmit}>
+          <h1>{name}</h1>
+          <label>
+            <input
+              type="text"
+              name="name"
+              value={name}
+              onChange={(event) => setName(event.target.value)}
+            />
+          </label>
+          {/* <button type="submit">Submit</button> */}
+        </form>
+      </div>
     </Layout >
   )
 }

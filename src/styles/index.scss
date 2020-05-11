@@ -99,6 +99,20 @@ header {
   align-items: center;
 }
 
+.playground {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    max-width: 960px;
+  }
+  input {
+    border-radius: 6px;
+    border: 1px solid transparent;
+    max-width: 100%;
+  }
+}
+
 @media only screen and (max-width: 700px) {
   .about {
     flex-direction: column;
