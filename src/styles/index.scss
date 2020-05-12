@@ -48,7 +48,7 @@ header {
         text-decoration: none;
         color: $prim-color;
         &:hover {
-          color: $hover-color;
+          color: darken($prim-color, 25%);
         }
       }
     }
@@ -85,9 +85,9 @@ header {
   a {
     font-size: 1.5rem;
     margin: 0.5rem 0;
-    color: salmon;
+    color: #fa8072;
     &:hover {
-      color: $hover-color;
+      color: lighten(#fa8072, 15%);
     }
   }
 }
