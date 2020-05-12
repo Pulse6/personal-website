@@ -1,7 +1,6 @@
 @import "./layout.scss";
 
 $prim-color: white;
-$hover-color: rgb(206, 206, 206);
 
 body {
   background: #101723;
@@ -24,10 +23,6 @@ body {
 
 header {
   div {
-    // position: fixed;
-    // top: 0;
-    // left: 50%;
-    // transform: translate(-50%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,6 +65,12 @@ header {
   }
 }
 
+@keyframes link {
+  0%  {color: #fa8072;}
+  50%  {color: lighten(#fa8072, 25%);}
+  100% {color: #fa8072;}
+}
+
 .contact {
   display: flex;
   flex-direction: column;
@@ -87,7 +88,9 @@ header {
     margin: 0.5rem 0;
     color: #fa8072;
     &:hover {
-      color: lighten(#fa8072, 15%);
+      animation-name: link;
+      animation-duration: 1s;
+      // color: lighten(#fa8072, 15%);
     }
   }
 }
