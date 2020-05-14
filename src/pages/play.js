@@ -1,10 +1,16 @@
 import React, { useState } from "react"
+import axios from "axios"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const PlayPage = () => {
   const [name, setName] = useState('')
+
+  React.useEffect(() => {
+    axios.get('https://pokeapi.co/api/v2/pokemon/ditto/')
+    .then((res) => console.log("THISSS",res))
+  }, [])
 
   const handleSubmit = event => {
     event.preventDefault()
