@@ -1,10 +1,10 @@
-import React from "react"
+import React, { useState } from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const PlayPage = () => {
-  const [name, setName] = React.useState('')
+  const [name, setName] = useState('')
 
   const handleSubmit = event => {
     event.preventDefault()
