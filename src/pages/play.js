@@ -24,6 +24,9 @@ const PlayPage = () => {
     axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`)
       // axios.get('https://swapi.dev/api/people/')
       .then((res) => {
+        // if(res.data === null) {
+        //   console.log("HERE")
+        // }
         setPoki(res.data)
         console.log(res.data)
       })
@@ -53,14 +56,14 @@ const PlayPage = () => {
         return <p key={eachpoki.name}>{eachpoki.name}</p>
       })} */}
       {show && poki &&
-        <>
+        <div className="poki-info">
           <img src={poki.sprites.front_default} alt={poki.name}/>
           <h3>{poki.name}</h3>
           <h4>Abilities</h4>
           {poki.abilities.map(skills => {
-            return <p>{skills.ability.name}</p>
+            return <p>- {skills.ability.name}</p>
           })}
-        </>
+        </div>
       }
     </Layout >
   )
