@@ -8,6 +8,7 @@ const PlayPage = () => {
   const [name, setName] = useState('')
   const [show, setShow] = useState(false)
   const [poki, setPoki] = useState(null)
+  const [err, setErr] = useState(false)
   // const [starwar, setStarwar] = useState(null)
 
   // React.useEffect(() => {
@@ -27,8 +28,13 @@ const PlayPage = () => {
         // if(res.data === null) {
         //   console.log("HERE")
         // }
+        setErr(false)
         setPoki(res.data)
-        console.log(res.data)
+        // console.log(res.data)
+      })
+      .catch(error => {
+        setErr(true)
+        // console.log(error)
       })
     setShow(true)
   }
@@ -55,7 +61,8 @@ const PlayPage = () => {
       {/* {!poki ? <p>Loading...</p> : poki.map(eachpoki =>{
         return <p key={eachpoki.name}>{eachpoki.name}</p>
       })} */}
-      {show && poki &&
+      {err && <p>Something Went Wrong :o</p>}
+      {show && poki && !err &&
         <div className="poki-info">
           <img src={poki.sprites.front_default} alt={poki.name}/>
           <h3>{poki.name}</h3>
