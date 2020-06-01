@@ -41,7 +41,7 @@ const NotFoundPage = () => (
     <SEO title="404: Not found" />
     <div className="notFound">
       <h1>NOT FOUND</h1>
-      <p>Something went wrong :o</p>
+      <p>Something went wrong <span role="img" aria-label="sheep">😟</span></p>
       <ButtonWrapper>
         <ButtonLink href="/">Return to the homepage</ButtonLink>
       </ButtonWrapper>
