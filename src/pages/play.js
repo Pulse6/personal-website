@@ -6,14 +6,14 @@ import SEO from "../components/seo"
 
 const PlayPage = () => {
   const [input, setInput] = useState('')
-  const [show, setShow] = useState(false)
+  // const [show, setShow] = useState(false)
   const [data, setData] = useState(null)
   const [err, setErr] = useState(false)
 
   const handleSubmit = event => {
     event.preventDefault()
     try {
-      axios.get(`https://api.edamam.com/search?q=${input}&app_id=${process.env.REACT_APP_RECIPE_SEARCH_ID}&app_key=${process.env.REACT_APP_RECIPE_SEARCH_KEY}`)
+      axios.get(`https://api.edamam.com/search?q=${input}&app_id=${process.env.GATSBY_APP_RECIPE_SEARCH_ID}&app_key=${process.env.GATSBY_APP_RECIPE_SEARCH_KEY}`)
         .then(res => {
           console.log(res.data)
           setData(res.data)
@@ -42,7 +42,10 @@ const PlayPage = () => {
           <button type="submit">Submit</button>
         </form>
       </div>
-      {err && <div>Something Went Wrong 😕</div>}
+      {err && <div>Something Went Wrong :o</div>}
+      {!err && data && data.hits.map(item => {
+        return <div key={item.recipe.label}>{item.recipe.label}</div>
+      })}
     </Layout >
   )
 }
