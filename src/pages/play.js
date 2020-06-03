@@ -9,7 +9,6 @@ const PlayPage = () => {
   const [loading, setLoading] = useState(false)
   const [data, setData] = useState(null)
   const [err, setErr] = useState(false)
-  // const [show, setShow] = useState(false)
 
   const handleSubmit = event => {
     setData(null)
@@ -50,8 +49,8 @@ const PlayPage = () => {
       {err && <div>Something Went Wrong :o</div>}
       {!err && data && data.hits.map(item => {
         return (
-          <div key={item.recipe.label}>
-            <div>{item.recipe.label}</div>
+          <div key={item.recipe.label} className="playgroundData">
+            <a href={item.recipe.url} target="_blank">{item.recipe.label}</a>
             {item.recipe.ingredientLines.map(item => {
               return <div key={item}>- {item}</div>
             })}

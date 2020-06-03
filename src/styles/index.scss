@@ -132,11 +132,20 @@ header {
       color: wheat;
     }
   }
-  .poki-info {
-    img, h3, h4, p {
-      padding: 0;
-      margin: 0;
+  button {
+    margin: 0.5rem 0;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    &:hover {
+      background-color: darken($color: white, $amount: 50);
     }
+  }
+}
+
+.playgroundData {
+  a {
+    text-decoration: none;
+    color: salmon;
   }
 }
 
