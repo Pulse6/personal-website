@@ -17,7 +17,7 @@ const PlayPage = () => {
     try {
       axios.get(`https://api.edamam.com/search?q=${input}&app_id=${process.env.GATSBY_APP_RECIPE_SEARCH_ID}&app_key=${process.env.GATSBY_APP_RECIPE_SEARCH_KEY}`)
         .then(res => {
-          console.log(res.data)
+          // console.log(res.data)
           setData(res.data)
           setErr(false)
           setLoading(false)
