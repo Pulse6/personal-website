@@ -42,7 +42,7 @@ const PlayPage = () => {
               onChange={(event) => setInput(event.target.value)}
             />
           </label>
-          <button type="submit">Submit</button>
+          {/* <button type="submit">Submit</button> */}
         </form>
       </div>
       {loading && <div>Loading...</div>}
@@ -50,7 +50,7 @@ const PlayPage = () => {
       {!err && data && data.hits.map(item => {
         return (
           <div key={item.recipe.label} className="playgroundData">
-            <a href={item.recipe.url} target="_blank">{item.recipe.label}</a>
+            <a href={item.recipe.url} target="_blank" rel="noopener noreferrer">{item.recipe.label}</a>
             {item.recipe.ingredientLines.map(item => {
               return <div key={item}>- {item}</div>
             })}

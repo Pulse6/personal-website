@@ -124,13 +124,10 @@ header {
     text-transform: lowercase;
   }
   input {
-    border-radius: 6px;
+    background: transparent;
     border: 1px solid transparent;
-    max-width: 100%;
-    &:focus {
-      background-color: gray;
-      color: wheat;
-    }
+    border-bottom: 1px solid white;
+    color: salmon;
   }
   button {
     margin: 0.5rem 0;
