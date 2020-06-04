@@ -42,7 +42,7 @@ const PlayPage = () => {
               onChange={(event) => setInput(event.target.value)}
             />
           </label>
-          {/* <button type="submit">Submit</button> */}
+          <button type="submit">Search</button>
         </form>
       </div>
       {loading && <div>Loading...</div>}

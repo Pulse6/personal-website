@@ -117,24 +117,25 @@ header {
   }
   form {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
   }
   form input[type="text"] {
     text-transform: lowercase;
   }
   input {
+    margin-right: 1rem;
     background: transparent;
     border: 1px solid transparent;
     border-bottom: 1px solid white;
-    color: salmon;
+    color: white;
   }
   button {
-    margin: 0.5rem 0;
     border-radius: 10px;
     border: 1px solid transparent;
     &:hover {
-      background-color: darken($color: white, $amount: 50);
+      background-color: darken($color: white, $amount: 15);
+      cursor: pointer;
     }
   }
 }
