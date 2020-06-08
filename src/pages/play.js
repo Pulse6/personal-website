@@ -11,9 +11,13 @@ const PlayPage = () => {
   const [err, setErr] = useState(false)
 
   const handleSubmit = event => {
+    event.preventDefault()
+    setErr(false);
+    if (event.target.input.defaultValue === '') {
+      setErr(true);
+    } else {
     setData(null)
     setLoading(true)
-    event.preventDefault()
     try {
       axios.get(`https://api.edamam.com/search?q=${input}&app_id=${process.env.GATSBY_APP_RECIPE_SEARCH_ID}&app_key=${process.env.GATSBY_APP_RECIPE_SEARCH_KEY}`)
         .then(res => {
@@ -27,6 +31,7 @@ const PlayPage = () => {
       setErr(true)
       console.error(error)
     }
+    }
   }
 
   return (
@@ -37,7 +42,7 @@ const PlayPage = () => {
           <label>
             <input
               type="text"
-              name="name"
+              name="input"
               value={input}
               onChange={(event) => setInput(event.target.value)}
             />
