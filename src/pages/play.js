@@ -1,8 +1,10 @@
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
 import axios from "axios"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+
+import { Context } from "../context/context"
 
 const PlayPage = () => {
   const [input, setInput] = useState('')
@@ -10,27 +12,29 @@ const PlayPage = () => {
   const [data, setData] = useState(null)
   const [err, setErr] = useState(false)
 
+  const [state, setState] = useContext(Context);
+  console.log("this", state.count)
   const handleSubmit = event => {
     event.preventDefault()
     setErr(false);
     if (event.target.input.defaultValue === '') {
       setErr(true);
     } else {
-    setData(null)
-    setLoading(true)
-    try {
-      axios.get(`https://api.edamam.com/search?q=${input}&app_id=${process.env.GATSBY_APP_RECIPE_SEARCH_ID}&app_key=${process.env.GATSBY_APP_RECIPE_SEARCH_KEY}`)
-        .then(res => {
-          // console.log(res.data)
-          setData(res.data)
-          setErr(false)
-          setLoading(false)
-        })
-    }
-    catch (error) {
-      setErr(true)
-      console.error(error)
-    }
+      setData(null)
+      setLoading(true)
+      try {
+        axios.get(`https://api.edamam.com/search?q=${input}&app_id=${process.env.GATSBY_APP_RECIPE_SEARCH_ID}&app_key=${process.env.GATSBY_APP_RECIPE_SEARCH_KEY}`)
+          .then(res => {
+            // console.log(res.data)
+            setData(res.data)
+            setErr(false)
+            setLoading(false)
+          })
+      }
+      catch (error) {
+        setErr(true)
+        console.error(error)
+      }
     }
   }
 
