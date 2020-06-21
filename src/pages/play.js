@@ -14,6 +14,7 @@ const PlayPage = () => {
 
   const [state, setState] = useContext(Context);
   console.log("this", state.count)
+  
   const handleSubmit = event => {
     event.preventDefault()
     setErr(false);

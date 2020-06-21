@@ -1,8 +1,6 @@
-import React, { useState } from "react";
-// import Cookies from "js-cookie";
+import React, { createContext, useState } from "react";
 
-const Context = React.createContext([{}, () => {}]);
-// const UserContext = React.createContext();
+const Context = createContext([{}, () => { }]);
 
 const ContextProvider = props => {
   const [state, setState] = useState({
