@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 // import { Context } from "../context/context"
-import {GlobalStateContext, GlobalDispatchContext} from "../context/Context"
+import {GlobalStateContext, GlobalDispatchContext} from "../context/GlobalContextProvider"
 
 const PlayPage = () => {
   const [input, setInput] = useState('')
@@ -46,7 +46,8 @@ const PlayPage = () => {
       <SEO title="Play" />
       <div className="playground">
         {state.count}
-        <button onClick={() => dispatch({type: "add"})}>add</button>
+        <button onClick={() => dispatch({type: "increment"})}>+</button>
+        <button onClick={() => dispatch({type: "decrement"})}>-</button>
         <form onSubmit={handleSubmit}>
           <label>
             <input

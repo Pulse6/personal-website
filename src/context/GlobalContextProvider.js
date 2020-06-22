@@ -9,14 +9,20 @@ const initialState = {
 
 function reducer(state, action) {
   switch (action.type) {
-    case "add": {
+    case "increment": {
       return {
         ...state,
-        add: state.count++
+        count: state.count + 1
+      }
+    }
+    case "decrement": {
+      return {
+        ...state,
+        count: state.count - 1
       }
     }
     default:
-      throw new Error('bad action type')
+      throw new Error(`Unhandled action type: ${action.type}`)
   }
 }
 
