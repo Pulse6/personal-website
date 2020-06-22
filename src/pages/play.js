@@ -4,7 +4,8 @@ import axios from "axios"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import { Context } from "../context/context"
+// import { Context } from "../context/context"
+import {GlobalStateContext, GlobalDispatchContext} from "../context/Context"
 
 const PlayPage = () => {
   const [input, setInput] = useState('')
@@ -12,7 +13,8 @@ const PlayPage = () => {
   const [data, setData] = useState(null)
   const [err, setErr] = useState(false)
 
-  const [state, setState] = useContext(Context);
+  const state = useContext(GlobalStateContext);
+  const dispatch = useContext(GlobalDispatchContext);
   console.log("this", state.count)
   
   const handleSubmit = event => {
