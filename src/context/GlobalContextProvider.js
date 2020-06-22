@@ -1,7 +1,7 @@
 import React from "react"
 
-export const GlobalStateContext = React.createContext()
-export const GlobalDispatchContext = React.createContext()
+const GlobalStateContext = React.createContext()
+const GlobalDispatchContext = React.createContext()
 
 const initialState = {
   count: 0,
@@ -37,4 +37,4 @@ const GlobalContextProvider = ({ children }) => {
   )
 }
 
-export default GlobalContextProvider
+export {GlobalContextProvider, GlobalStateContext, GlobalDispatchContext}
