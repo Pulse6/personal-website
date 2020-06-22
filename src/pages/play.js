@@ -45,6 +45,8 @@ const PlayPage = () => {
     < Layout >
       <SEO title="Play" />
       <div className="playground">
+        {state.count}
+        <button onClick={() => dispatch({type: "add"})}>add</button>
         <form onSubmit={handleSubmit}>
           <label>
             <input

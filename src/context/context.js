@@ -1,21 +1,3 @@
-// import React, { createContext, useState } from "react";
-
-// const Context = createContext([{}, () => { }]);
-// // const Context = createContext({children});
-
-// const ContextProvider = props => {
-//   const [state, setState] = useState({
-//     count: 0,
-//   });
-
-//   return (
-//     <Context.Provider value={[state, setState]}>
-//       {props.children}
-//     </Context.Provider>
-//   );
-// };
-
-// export { Context, ContextProvider };
 import React from "react"
 
 export const GlobalStateContext = React.createContext()
@@ -30,7 +12,7 @@ function reducer(state, action) {
     case "add": {
       return {
         ...state,
-        add: state.count + 1
+        add: state.count++
       }
     }
     default:

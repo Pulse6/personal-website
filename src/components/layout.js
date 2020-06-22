@@ -12,8 +12,6 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import "../styles/index.scss"
 
-// import { ContextProvider } from "../context/context";
-
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -27,7 +25,7 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    // <ContextProvider>
+    <>
       <div className="container">
         <Header siteTitle={data.site.siteMetadata.title} />
         <div className="layout">
@@ -37,7 +35,7 @@ const Layout = ({ children }) => {
         </footer> */}
         </div>
       </div>
-    // </ContextProvider>
+    </>
   )
 }
 
