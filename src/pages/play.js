@@ -8,14 +8,13 @@ import SEO from "../components/seo"
 import {GlobalStateContext, GlobalDispatchContext} from "../context/GlobalContextProvider"
 
 const PlayPage = () => {
-  const [input, setInput] = useState('')
   const [loading, setLoading] = useState(false)
   const [data, setData] = useState(null)
   const [err, setErr] = useState(false)
 
   const state = useContext(GlobalStateContext);
   const dispatch = useContext(GlobalDispatchContext);
-  console.log("this", state.count)
+  // console.log("this", state.count)
   
   const handleSubmit = event => {
     event.preventDefault()
@@ -26,7 +25,7 @@ const PlayPage = () => {
       setData(null)
       setLoading(true)
       try {
-        axios.get(`https://api.edamam.com/search?q=${input}&app_id=${process.env.GATSBY_APP_RECIPE_SEARCH_ID}&app_key=${process.env.GATSBY_APP_RECIPE_SEARCH_KEY}`)
+        axios.get(`https://api.edamam.com/search?q=${state.input}&app_id=${process.env.GATSBY_APP_RECIPE_SEARCH_ID}&app_key=${process.env.GATSBY_APP_RECIPE_SEARCH_KEY}`)
           .then(res => {
             // console.log(res.data)
             setData(res.data)
@@ -53,8 +52,8 @@ const PlayPage = () => {
             <input
               type="text"
               name="input"
-              value={input}
-              onChange={(event) => setInput(event.target.value)}
+              value={state.input}
+              onChange={(event) => dispatch({type: "changeinput", input: event.target.value})}
             />
           </label>
           <button type="submit">Search</button>

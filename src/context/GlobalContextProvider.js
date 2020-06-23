@@ -5,6 +5,7 @@ const GlobalDispatchContext = React.createContext()
 
 const initialState = {
   count: 0,
+  input: "",
 }
 
 function reducer(state, action) {
@@ -19,6 +20,12 @@ function reducer(state, action) {
       return {
         ...state,
         count: state.count - 1
+      }
+    }
+    case "changeinput": {
+      return {
+        ...state,
+        input: action.input
       }
     }
     default:
