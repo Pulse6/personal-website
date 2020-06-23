@@ -1,40 +1,36 @@
-import React, { useState, useContext } from "react"
+import React, { useContext } from "react"
 import axios from "axios"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 // import { Context } from "../context/context"
-import {GlobalStateContext, GlobalDispatchContext} from "../context/GlobalContextProvider"
+import { GlobalStateContext, GlobalDispatchContext } from "../context/GlobalContextProvider"
 
 const PlayPage = () => {
-  const [loading, setLoading] = useState(false)
-  const [data, setData] = useState(null)
-  const [err, setErr] = useState(false)
 
   const state = useContext(GlobalStateContext);
   const dispatch = useContext(GlobalDispatchContext);
-  // console.log("this", state.count)
-  
+
   const handleSubmit = event => {
     event.preventDefault()
-    setErr(false);
+    dispatch({ type: "seterr", err: false })
     if (event.target.input.defaultValue === '') {
-      setErr(true);
+      dispatch({ type: "seterr", err: true })
     } else {
-      setData(null)
-      setLoading(true)
+      dispatch({ type: "setdata", data: null })
+      dispatch({ type: "toggleloading" })
       try {
         axios.get(`https://api.edamam.com/search?q=${state.input}&app_id=${process.env.GATSBY_APP_RECIPE_SEARCH_ID}&app_key=${process.env.GATSBY_APP_RECIPE_SEARCH_KEY}`)
           .then(res => {
-            // console.log(res.data)
-            setData(res.data)
-            setErr(false)
-            setLoading(false)
+            dispatch({ type: "setdata", data: res.data })
+            dispatch({ type: "seterr", err: false })
+            dispatch({ type: "toggleloading" })
           })
       }
       catch (error) {
-        setErr(true)
+        dispatch({ type: "toggleloading" })
+        dispatch({ type: "seterr", err: true })
         console.error(error)
       }
     }
@@ -45,23 +41,23 @@ const PlayPage = () => {
       <SEO title="Play" />
       <div className="playground">
         {state.count}
-        <button onClick={() => dispatch({type: "increment"})}>+</button>
-        <button onClick={() => dispatch({type: "decrement"})}>-</button>
+        <button onClick={() => dispatch({ type: "increment" })}>+</button>
+        <button onClick={() => dispatch({ type: "decrement" })}>-</button>
         <form onSubmit={handleSubmit}>
           <label>
             <input
               type="text"
               name="input"
               value={state.input}
-              onChange={(event) => dispatch({type: "changeinput", input: event.target.value})}
+              onChange={(event) => dispatch({ type: "changeinput", input: event.target.value })}
             />
           </label>
           <button type="submit">Search</button>
         </form>
       </div>
-      {loading && <div>Loading...</div>}
-      {err && <div>Something Went Wrong :o</div>}
-      {!err && data && data.hits.map(item => {
+      {state.loading && <div>Loading...</div>}
+      {state.err && <div>Something Went Wrong :o</div>}
+      {!state.err && state.data && state.data.hits.map(item => {
         return (
           <div key={item.recipe.label} className="playgroundData">
             <a href={item.recipe.url} target="_blank" rel="noopener noreferrer">{item.recipe.label}</a>

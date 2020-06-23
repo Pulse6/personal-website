@@ -6,6 +6,9 @@ const GlobalDispatchContext = React.createContext()
 const initialState = {
   count: 0,
   input: "",
+  loading: false,
+  err: false,
+  data: null,
 }
 
 function reducer(state, action) {
@@ -26,6 +29,24 @@ function reducer(state, action) {
       return {
         ...state,
         input: action.input
+      }
+    }
+    case "toggleloading": {
+      return {
+        ...state,
+        loading: state.loading ? false : true
+      }
+    }
+    case "seterr": {
+      return {
+        ...state,
+        err: action.err
+      }
+    }
+    case "setdata": {
+      return {
+        ...state,
+        data: action.data
       }
     }
     default:
