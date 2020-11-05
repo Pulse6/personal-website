@@ -43,7 +43,7 @@ const AboutPage = () => {
           <h1>Nice to meet you <span role="img" aria-label="sheep">🐑</span></h1>
           <p>My name is Hok Lun Siu, You may call me Marco. I am passionate about web development. Enjoy helping my colleagues hone their coding abilities, and solving problems. I am always looking forward to the new challenges of the ever changing technological world we live in. I am excited to be given the opportunity to be apart of a coding team.</p>
         </div>
-        <div class="time-left">Year Left: {timeLeft} sec</div>
+        <div class="time-left">{timeLeft}</div>
       </div>
     </Layout>
   )
