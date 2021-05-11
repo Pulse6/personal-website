@@ -169,18 +169,37 @@ header {
     &:before {
       filter: blur(7px);
       transition: all 0.25s ease;
-      animation: pulse 10s infinite ease;
+      animation: pulse 1s infinite ease;
     }
     &:after {
       filter: blur(0.3px);
     }
     &:hover {
+      animation: rotate 0.5s ease-in-out both;
       &:before {
         width: 115%;
         height: 115%;
       }
     }
   }
+}
+
+@keyframes rotate{
+  0% {transform: rotate(0deg) translate3d(0, 0, 0)}
+  25% {transform: rotate(3deg) translate3d(0, 0, 0)}
+  50% {transform: rotate(-3deg) translate3d(0, 0, 0)}
+  75% {transform: rotate(1deg) translate3d(0, 0, 0)}
+  100% {transform: rotate(0deg) translate3d(0, 0, 0)}
+}
+
+@keyframes pulse{
+  0% {background: linear-gradient(60deg, #ef4e7b, #f37055, #f79533, #6fba82, #07b39b, #5073b8, #a166ab);}
+  15% {background: linear-gradient(60deg, #a166ab, #ef4e7b, #f37055, #f79533, #6fba82, #07b39b, #5073b8);}
+  30% {background: linear-gradient(60deg, #5073b8, #a166ab, #ef4e7b, #f37055, #f79533, #6fba82, #07b39b);}
+  45% {background: linear-gradient(60deg, #07b39b, #5073b8, #a166ab, #ef4e7b, #f37055, #f79533, #6fba82);}
+  60% {background: linear-gradient(60deg, #f79533, #6fba82, #07b39b, #5073b8, #a166ab, #ef4e7b, #f37055);}
+  85% {background: linear-gradient(60deg, #f37055, #f79533, #6fba82, #07b39b, #5073b8, #a166ab, #ef4e7b);}
+  100% {background: linear-gradient(60deg, #ef4e7b, #f37055, #f79533, #6fba82, #07b39b, #5073b8, #a166ab);}
 }
 
 .playbody {
