@@ -41,8 +41,7 @@ header {
       transition: 0.5s;
       margin: 0 1rem;
       // padding: 5px 10px;
-      &:hover,
-      &:focus {
+      &:hover {
         box-shadow: 0 0.5em 0.5em -0.4em #ff7f82;
         transform: translateY(-0.25em);
       }
@@ -99,8 +98,7 @@ header {
     padding: 5px 10px;
     text-decoration: none;
     transition: 0.5s;
-    &:hover,
-    &:focus {
+    &:hover {
       color: black;
       box-shadow: inset 6.5em 0 0 0 #ff7f82;
     }
