@@ -70,10 +70,10 @@ const PlayPage = () => {
             />
           </label> */}
           {/* <button type="submit">Search</button> */}
-          <button type="submit">Random Pokemon</button>
+          <button type="submit">{state.loading && <span>Loading...</span>}{!state.loading && <span>Random Pokemon</span>}</button>
         </form>
       </div>
-      {state.loading && <div>Loading...</div>}
+      {/* {state.loading && <div>Loading...</div>} */}
       {state.err && <div>Something Went Wrong :o</div>}
       {state.data &&
         <div className="playbody">
