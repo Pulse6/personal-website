@@ -64,6 +64,12 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  h1 {
+    background-color: #FFE53B;
+    background: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
   div {
     margin: 2%;
   }
@@ -82,6 +88,10 @@ header {
   align-items: center;
   h1 {
     text-align: center;
+    background-color: #4158D0;
+    background: linear-gradient(45deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   ul {
     // color: salmon;
@@ -237,6 +247,11 @@ header {
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
+
+  // background-color: #FF9A8B;
+  // background: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
+  // background-clip: text;
+  // -webkit-text-fill-color: transparent;
 }
 
 @media only screen and (max-width: 800px) {
