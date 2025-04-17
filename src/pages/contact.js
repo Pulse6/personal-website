@@ -13,7 +13,7 @@ const ContactPage = () => (
         <li><a href="mailto:marco.hl.siu@gmail.com">Email</a></li>
         <li><a href="https://www.linkedin.com/in/marco-siu-790802162/" rel="noopener noreferrer" target="_blank">LinkedIn</a></li>
         <li><a href="https://github.com/Pulse6" rel="noopener noreferrer" target="_blank">Github</a></li>
-        <li><a href="https://www.canva.com/design/DAD5ca8VaMA/ebM48TwW5I4CTXurvfjnSg/view?utm_content=DAD5ca8VaMA&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton" rel="noopener noreferrer" target="_blank">Resume</a></li>
+        <li><a href="https://www.canva.com/design/DAGMiOS_88I/GnqQMhlOsglS8edX0IX1cA/view?utm_content=DAGMiOS_88I&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h4e7b6f4158" rel="noopener noreferrer" target="_blank">Resume</a></li>
       </ul>
     </div>
   </Layout>
